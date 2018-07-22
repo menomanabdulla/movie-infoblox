@@ -27,3 +27,11 @@
     margin: 5px 0;
     font-size: 16px;
 }
+.single-movie{
+    padding: 15px;
+    background: #ddd;
+    margin: 15px 0;
+}
+.movie-ratting-block .fas{
+    color: #ffc107;
+}

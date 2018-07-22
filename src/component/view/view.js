@@ -19,8 +19,6 @@ class View extends Component{
         //console.log( ReactHtmlParser(result))
         
         return  ReactHtmlParser(result)
-        
-
     }
     render(){
         return(

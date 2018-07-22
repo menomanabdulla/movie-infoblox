@@ -1,12 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
 import View from './view/view'
-
+import Controller from './controller/controller'
 class App extends Component {
   constructor (){
     super()
     this.movie=[
       {
+        name: 'Ligting Baby',
+        catagorie: 'Horror',
+        director: 'Cristoper Liam',
+        ratting: 4,
+        thumb: 'https://i.pinimg.com/originals/4a/fc/6f/4afc6f3d14881f4c67370033d3146aed.jpg'
+      },{
+        name: 'Star War',
+        catagorie: 'Action',
+        director: 'Nolan Liam',
+        ratting: 5,
+        thumb: 'https://i.pinimg.com/originals/a0/3c/4b/a03c4b4d6c8702586f2aa67aecc744e1.jpg'
+      },{
+        name: 'False Stem',
+        catagorie: 'Action',
+        director: 'Nolan Liam',
+        ratting: 4,
+        thumb: 'https://i.pinimg.com/originals/bb/e3/73/bbe3736ca3522ff81849d90ad89b7031.jpg'
+      },{
         name: 'Man of Steel',
         catagorie: 'Comics',
         director: 'Zack Snyder',
@@ -30,28 +48,27 @@ class App extends Component {
         director: 'Jemy Heil',
         ratting: 3,
         thumb: 'https://i.pinimg.com/originals/77/83/d7/7783d7cb69830d7adddb8d3b6dc526a9.jpg'
-      },{
-        name: 'Ligting Baby',
-        catagorie: 'Horror',
-        director: 'Cristoper Liam',
-        ratting: 4,
-        thumb: 'https://i.pinimg.com/originals/4a/fc/6f/4afc6f3d14881f4c67370033d3146aed.jpg'
-      },{
-        name: 'Star War',
-        catagorie: 'Action',
-        director: 'Nolan Liam',
-        ratting: 5,
-        thumb: 'https://i.pinimg.com/originals/a0/3c/4b/a03c4b4d6c8702586f2aa67aecc744e1.jpg'
-      },{
-        name: 'False Stem',
-        catagorie: 'Action',
-        director: 'Nolan Liam',
-        ratting: 4,
-        thumb: 'https://i.pinimg.com/originals/bb/e3/73/bbe3736ca3522ff81849d90ad89b7031.jpg'
       }
     ]
+    this.state = {
+      dataLength: this.movie.length
+    }
   }
-  
+
+showMore(){
+  this.setState({
+    ...this.state,
+    dataLength: this.movie.length
+  })
+}
+
+showLess(){
+  this.setState({
+    ...this.state,
+    dataLength: this.movie.length-3
+  })
+}
+
   render(){
     return (
       <div className="container">
@@ -59,7 +76,7 @@ class App extends Component {
           <div className="col-md-9">
               <div className="movie-view-block">
                 {
-                  this.movie.map((item,index) => {
+                  this.movie.slice(0, this.state.dataLength).map((item,index) => {
                     return <View key = {index} movie = {item} />
                   })
                 }
@@ -67,7 +84,10 @@ class App extends Component {
             </div>
             <div className="col-md-3">
               <div className="movie-controller-block">
-
+                <Controller 
+                  more = {this.showMore.bind(this)}
+                  less = {this.showLess.bind(this)}
+                />
               </div>
             </div>
         </div>
