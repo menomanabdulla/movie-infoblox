@@ -1,0 +1,6 @@
+.single-movie-inner-block{
+    display: flex;
+    padding: 15px;
+    background: #ddd;
+    margin: 15px 0;
+}
