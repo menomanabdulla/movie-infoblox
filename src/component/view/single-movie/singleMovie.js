@@ -29,9 +29,13 @@ class SinglMovie extends Component{
             ratting.push(star)
             i++;
         }
+        console.log(ratting)
         let result = (
             ratting.toLocaleString()
         )
+        
+        result = result.replace(/,/g, '');
+        console.log(result)
         //console.log( ReactHtmlParser(result))
         
         return  ReactHtmlParser(result)
