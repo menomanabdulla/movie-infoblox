@@ -1,7 +1,7 @@
 import React ,{Component} from 'react'
 import './singleMovie.css'
 import ReactHtmlParser from 'react-html-parser'
-import autobind from 'autobind-decorator'
+//import autobind from 'autobind-decorator'
 
 class SinglMovie extends Component{
     constructor (props){
@@ -29,15 +29,10 @@ class SinglMovie extends Component{
             ratting.push(star)
             i++;
         }
-        console.log(ratting)
         let result = (
             ratting.toLocaleString()
         )
-        
         result = result.replace(/,/g, '');
-        console.log(result)
-        //console.log( ReactHtmlParser(result))
-        
         return  ReactHtmlParser(result)
     }
 

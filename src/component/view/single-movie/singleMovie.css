@@ -1,6 +1,6 @@
 .single-movie{
     display: flex;
-    padding: 15px;
+    padding: 25px;
     background: #ddd;
     margin: 15px 0;
 }
@@ -21,8 +21,8 @@
     min-width: 300px;
 }
 .movie-thumb-block img{
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
 }
 .block-inner{
     display: block;
@@ -39,4 +39,5 @@
 }
 .movie-ratting-block .fas{
     color: #ffc107;
+    padding: 2px;
 }
