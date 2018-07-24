@@ -20,6 +20,9 @@ class SinglMovie extends Component{
 
     ratting(){
         let length = this.state.ratting,i=0
+        if(length>5){
+            length = 5
+        }
         let star = '<i class="fas fa-star"></i>'
         let ratting = []
         while(i<length){
