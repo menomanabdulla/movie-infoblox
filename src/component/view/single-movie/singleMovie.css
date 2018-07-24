@@ -1,6 +1,42 @@
-.single-movie-inner-block{
+.single-movie{
     display: flex;
     padding: 15px;
     background: #ddd;
     margin: 15px 0;
+}
+.single-movie form{
+    width: 100%;
+}
+.content-wrap{
+    position: relative;
+}
+
+.single-movie div[class^="movie-"]{
+    -ms-flex-positive: 1;
+    display: flex;
+    flex: 1;
+    flex-grow: 1;
+    -ms-flex-align: center;
+    align-items: center;
+    min-width: 300px;
+}
+.movie-thumb-block img{
+    height: 100px;
+    width: 100px;
+}
+.block-inner{
+    display: block;
+
+}
+.block-inner h4{
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 600;
+}
+.block-inner p{
+    margin: 5px 0;
+    font-size: 16px;
+}
+.movie-ratting-block .fas{
+    color: #ffc107;
 }

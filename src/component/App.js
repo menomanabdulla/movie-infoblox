@@ -73,13 +73,9 @@ showLess(){
     return (
       <div className="container">
         <div className="row">
-          <div className="col-md-9">
+          <div className="col-md-12">
               <div className="movie-view-block">
                 <View movie = {this.state.movie} />
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="movie-controller-block">
               </div>
             </div>
         </div>
