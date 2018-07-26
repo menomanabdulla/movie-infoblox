@@ -130,8 +130,8 @@ class SinglMovie extends Component{
                         <img src={this.state.thumb} alt='img'/>
                     </div>
                     <div className="movie-controller">
-                        <button className= 'btn btn-primary btn-lg px-5' onClick={()=>this.editHandelar()} >Edit</button>
-                        <button className= 'btn btn-primary btn-lg px-5' onClick={()=>this.deleteHandelar()} >Delete</button>
+                        <button className= 'btn btn-primary btn-lg px-5 ml-2' onClick={()=>this.editHandelar()} >Edit</button>
+                        <button className= 'btn btn-danger btn-lg px-5 ml-2' onClick={()=>this.deleteHandelar()} >Delete</button>
                     </div>
                 </div>
             )
