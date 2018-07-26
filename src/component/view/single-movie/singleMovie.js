@@ -52,13 +52,28 @@ class SinglMovie extends Component{
         this.refs.form.reset()
         this.setState({
             ...this.state,
-            isEdit: false
+            isEdit: false,
+            isDelete: false
         })
     }
-
+    editHandelar(){
+        this.setState({
+            ...this.state,
+            isEdit: true
+        })
+    }
+    deleteHandelar(){
+        this.setState({
+            ...this.state,
+            isDelete: true
+        })
+    }
     changeAble(){
         let output = null
-        if(this.state.isEdit){
+        if(this.state.isDelete){
+            output = ''
+        }
+        else if(this.state.isEdit){
             output = (
                 <div className="single-movie">
                     <form onSubmit={this.add.bind(this)} ref="form">
@@ -116,17 +131,12 @@ class SinglMovie extends Component{
                     </div>
                     <div className="movie-controller">
                         <button className= 'btn btn-primary btn-lg px-5' onClick={()=>this.editHandelar()} >Edit</button>
+                        <button className= 'btn btn-primary btn-lg px-5' onClick={()=>this.deleteHandelar()} >Delete</button>
                     </div>
                 </div>
             )
         }
         return output
-    }
-    editHandelar(){
-        this.setState({
-            ...this.state,
-            isEdit: true
-        })
     }
     render(){
         return(
