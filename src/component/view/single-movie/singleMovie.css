@@ -6,6 +6,7 @@
 }
 .single-movie form{
     width: 100%;
+    max-width : auto;
 }
 .content-wrap{
     position: relative;
