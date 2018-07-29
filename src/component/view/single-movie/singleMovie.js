@@ -50,10 +50,11 @@ class SinglMovie extends Component{
         console.log(this.refs.form.reset())
         //this.refs.form[0].reset()
 
-        this.setState({
+        /*this.setState({
             isEdit: false,
             isDelete: false
-        })
+        })*/
+        this.props.MovieUpdate(this.state.singleMovie)
     }
     editHandelar(){
         this.setState({

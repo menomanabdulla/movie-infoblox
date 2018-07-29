@@ -11,7 +11,10 @@ class View extends Component{
             <div>
                 {
                     this.props.movie.map((item,index)=>{
-                        return <SingleMovie key = {index} singleMovie = {item} />
+                        return <SingleMovie key = {index} 
+                        singleMovie = {item}
+                        MovieUpdate = {this.props.EditHandeler}
+                        />
                     })
                 }
             </div>
