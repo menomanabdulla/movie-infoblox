@@ -9,17 +9,13 @@ class SinglMovie extends Component{
         //this.movie = this.props
         //console.log(this.props.movie)
         this.state = {
-            name: this.props.singleMovie.name,
-            catagorie: this.props.singleMovie.catagorie,
-            director: this.props.singleMovie.director,
-            ratting: this.props.singleMovie.ratting,
-            thumb: this.props.singleMovie.thumb,
+            singleMovie: this.props.singleMovie,
             isEdit: false
         }
     }
 
     ratting(){
-        let length = this.state.ratting,i=0
+        let length = this.state.singleMovie.ratting,i=0
         if(length>5){
             length = 5
         }
@@ -40,18 +36,21 @@ class SinglMovie extends Component{
     handleChange(e) {
         this.setState({
             ...this.state,
-            [e.target.name]: e.target.value
+            singleMovie:{
+                ...this.state.singleMovie,
+                [e.target.name]: e.target.value
+            }
         })
     }
 
    //@autobind
     add(e) {
         e.preventDefault();
-        console.log(this.collectio)
-        //this.collection.add(this.state)
-        this.refs.form.reset()
+       // this.refs.form
+        console.log(this.refs.form.reset())
+        //this.refs.form[0].reset()
+
         this.setState({
-            ...this.state,
             isEdit: false,
             isDelete: false
         })
@@ -80,30 +79,30 @@ class SinglMovie extends Component{
                         <div className="row">
                             <div className="col-6">
                                 <div className="form-group">
-                                    <label for="formField1">Movie Name</label>
-                                    <input type="text" className="form-control" id="formField1" name="name" value={this.state.name} onChange={this.handleChange.bind(this)}/>
+                                    <label htmlFor="formField1">Movie Name</label>
+                                    <input type="text" className="form-control" id="formField1" name="name" value={this.state.singleMovie.name} onChange={this.handleChange.bind(this)}/>
                                 </div>
                                 <div className="form-group">
-                                    <label for="formField2">Movie Catagorie</label>
-                                    <input type="text" className="form-control" id="formField2" name="catagorie" value={this.state.catagorie} onChange={this.handleChange.bind(this)}/>
+                                    <label htmlFor="formField2">Movie Catagorie</label>
+                                    <input type="text" className="form-control" id="formField2" name="catagorie" value={this.state.singleMovie.catagorie} onChange={this.handleChange.bind(this)}/>
                                 </div>
                                 <div className="form-group">
-                                    <label for="formField3">Movie Director</label>
-                                    <input type="text" className="form-control" id="formField3" name="director" value={this.state.director} onChange={this.handleChange.bind(this)}/>
+                                    <label htmlFor="formField3">Movie Director</label>
+                                    <input type="text" className="form-control" id="formField3" name="director" value={this.state.singleMovie.director} onChange={this.handleChange.bind(this)}/>
                                 </div>
                             </div>
                             <div className="col-6">
                                 <div className="form-group">
-                                    <label for="formField4">Movie Rattting</label>
-                                    <input type="text" className="form-control" id="formField4" name="ratting" value={this.state.ratting} onChange={this.handleChange.bind(this)}/>
+                                    <label htmlFor="formField4">Movie Rattting</label>
+                                    <input type="text" className="form-control" id="formField4" name="ratting" value={this.state.singleMovie.ratting} onChange={this.handleChange.bind(this)}/>
                                 </div>
                                 <div className="form-group">
-                                    <label for="formField5">Movie Thumb</label>
-                                    <input type="text" className="form-control" id="formField5" name="thumb"  value={this.state.thumb} onChange={this.handleChange.bind(this)}/>
+                                    <label htmlFor="formField5">Movie Thumb</label>
+                                    <input type="text" className="form-control" id="formField5" name="thumb"  value={this.state.singleMovie.thumb} onChange={this.handleChange.bind(this)}/>
                                 </div>
                                 <div className="form-group">
                                     <label></label>
-                                    <button class="btn btn-info btn-lg btn-block" type="submit">Update</button>
+                                    <button className="btn btn-info btn-lg btn-block" type="submit">Update</button>
                                 </div>
                             </div>
                         </div>
@@ -115,19 +114,18 @@ class SinglMovie extends Component{
                 <div className="single-movie">
                     <div className="movie-info-block">
                         <div className="block-inner">
-                            <h4>{this.state.name}</h4>
-                            <p>{this.state.catagorie}</p>
-                            <p>{this.state.director}</p>
+                            <h4>{this.state.singleMovie.name}</h4>
+                            <p>{this.state.singleMovie.catagorie}</p>
+                            <p>{this.state.singleMovie.director}</p>
                         </div>
                     </div>
                     <div className="movie-ratting-block">
-                    
                     {
                         this.ratting()
                     }
                     </div>
                     <div className="movie-thumb-block">
-                        <img src={this.state.thumb} alt='img'/>
+                        <img src={this.state.singleMovie.thumb} alt='img'/>
                     </div>
                     <div className="movie-controller">
                         <button className= 'btn btn-primary btn-lg px-5 ml-2' onClick={()=>this.editHandelar()} >Edit</button>
