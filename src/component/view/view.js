@@ -4,6 +4,7 @@ import SingleMovie from './single-movie/singleMovie'
 class View extends Component{
     constructor (props){
         super(props)
+        console.log(props)
     }
 
     render(){
