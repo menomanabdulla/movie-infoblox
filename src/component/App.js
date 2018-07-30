@@ -77,9 +77,9 @@ showLess(){
 }*/
 
   UpdateMoveList = (movie)=>{
-    /*let newMovie = this.state.movie.findIndex((data)=>{
+    let newMovie = this.state.movie.findIndex((data)=>{
       return data.id === id
-    })*/
+    })
     this.setState({
       ...this.state.movie,
       movie
