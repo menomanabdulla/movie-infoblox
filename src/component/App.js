@@ -62,7 +62,15 @@ class App extends Component {
           director: 'Jemy Heil',
           ratting: 3,
           thumb: 'https://i.pinimg.com/originals/77/83/d7/7783d7cb69830d7adddb8d3b6dc526a9.jpg',
-          id: 7
+          id: 8
+        },
+        {
+          name: 'Blind Love',
+          catagorie: 'Romantic',
+          director: 'Jemy Heil',
+          ratting: 3,
+          thumb: 'https://i.pinimg.com/originals/77/83/d7/7783d7cb69830d7adddb8d3b6dc526a9.jpg',
+          id: 9
         }
       ],
       dataLength: this.state
