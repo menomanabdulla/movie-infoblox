@@ -7,7 +7,7 @@ class SinglMovie extends Component{
     constructor (props){
         super(props)
         //this.movie = this.props
-        //console.log(this.props.movie)
+        //console.log(this.props)
         this.state = {
             singleMovie: this.props.singleMovie,
             isEdit: false
@@ -15,7 +15,7 @@ class SinglMovie extends Component{
     }
 
     ratting(){
-        let length = this.state.singleMovie.ratting,i=0
+        let length = this.props.singleMovie.ratting,i=0
         if(length>5){
             length = 5
         }
@@ -47,14 +47,16 @@ class SinglMovie extends Component{
     add(e) {
         e.preventDefault();
        // this.refs.form
-        console.log(this.refs.form.reset())
+        //console.log(this.refs.form.reset())
         //this.refs.form[0].reset()
 
-        /*this.setState({
+       
+        //console.log(this.state.singleMovie)
+        this.props.MovieUpdate(this.state.singleMovie)
+         this.setState({
             isEdit: false,
             isDelete: false
-        })*/
-        this.props.MovieUpdate(this.state.singleMovie)
+        })
     }
     editHandelar(){
         this.setState({
@@ -115,9 +117,9 @@ class SinglMovie extends Component{
                 <div className="single-movie">
                     <div className="movie-info-block">
                         <div className="block-inner">
-                            <h4>{this.state.singleMovie.name}</h4>
-                            <p>{this.state.singleMovie.catagorie}</p>
-                            <p>{this.state.singleMovie.director}</p>
+                            <h4>{this.props.singleMovie.name}</h4>
+                            <p>{this.props.singleMovie.catagorie}</p>
+                            <p>{this.props.singleMovie.director}</p>
                         </div>
                     </div>
                     <div className="movie-ratting-block">
@@ -126,7 +128,7 @@ class SinglMovie extends Component{
                     }
                     </div>
                     <div className="movie-thumb-block">
-                        <img src={this.state.singleMovie.thumb} alt='img'/>
+                        <img src={this.props.singleMovie.thumb} alt='img'/>
                     </div>
                     <div className="movie-controller">
                         <button className= 'btn btn-primary btn-lg px-5 ml-2' onClick={()=>this.editHandelar()} >Edit</button>
