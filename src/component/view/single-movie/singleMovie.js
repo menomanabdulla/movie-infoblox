@@ -65,17 +65,12 @@ class SinglMovie extends Component{
         })
     }
     deleteHandelar(){
-        this.setState({
-            ...this.state,
-            isDelete: true
-        })
+       this.props.MovieDelete(this.state.singleMovie)
+       // console.log(this.props.MovieDelete)
     }
     changeAble(){
         let output = null
-        if(this.state.isDelete){
-            output = ''
-        }
-        else if(this.state.isEdit){
+        if(this.state.isEdit){
             output = (
                 <div className="single-movie">
                     <form onSubmit={this.add.bind(this)} ref="form">

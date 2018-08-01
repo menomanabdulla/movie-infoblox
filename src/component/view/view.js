@@ -15,6 +15,7 @@ class View extends Component{
                         return <SingleMovie key = {index} 
                         singleMovie = {item}
                         MovieUpdate = {this.props.EditHandeler}
+                        MovieDelete = {this.props.DeliteHendeler}
                         />
                     })
                 }

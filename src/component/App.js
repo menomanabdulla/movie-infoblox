@@ -112,7 +112,15 @@ showLess(){
     this.setState({
       movie : movieInState
     })
-    console.log(this.state.movie)
+    //console.log(this.state.movie)
+  }
+
+  deleteMovie = (deleteMovie)=>{
+    let movieInState = [...this.state.movie]
+    movieInState.splice(deleteMovie.id,1)
+    this.setState({
+      movie : movieInState
+    })
   }
 
   render(){
@@ -121,7 +129,9 @@ showLess(){
         <div className="row">
           <div className="col-md-12">
               <div className="movie-view-block">
-                <View EditHandeler = {this.UpdateMoveList.bind(this)} movie = {this.state.movie} />
+                <View EditHandeler = {this.UpdateMoveList.bind(this)} 
+                  DeliteHendeler = {this.deleteMovie.bind(this)} 
+                  movie = {this.state.movie} />
               </div>
             </div>
         </div>
