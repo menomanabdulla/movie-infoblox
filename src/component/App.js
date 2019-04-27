@@ -165,6 +165,7 @@ showLess(){
                     DeliteHendeler = {this.deleteMovie.bind(this)} 
                     movie = {this.state.movie} />
                 </div>
+                <p className="text-center">Email me or Hire me <a href="mailto:wedevslab@gmail.com">wedevslab</a></p>
               </div>
           </div>
         </div>
