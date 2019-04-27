@@ -6,6 +6,7 @@
     "autobind-decorator": "^2.1.0",
     "babel-eslint": "^8.2.6",
     "bootstrap": "^4.1.2",
+    "gh-pages": "^2.0.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-html-parser": "^2.0.2",
