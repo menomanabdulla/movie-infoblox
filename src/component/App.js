@@ -7,22 +7,22 @@ class App extends Component {
     this.state = {
       movie: [
         {
-          name: 'Ligting Baby',
-          catagorie: 'Horror',
-          director: 'Cristoper Liam',
-          ratting: 4,
-          thumb: 'https://i.pinimg.com/originals/4a/fc/6f/4afc6f3d14881f4c67370033d3146aed.jpg',
+          name: 'Avengers Endgame',
+          catagorie: 'Action, Adventure, Fantasy',
+          director: 'Christopher Markus',
+          ratting: 5,
+          thumb: 'https://static.gamespot.com/uploads/scale_super/1578/15789737/3515432-endgamedek.jpg',
           id: 0
         },{
           name: 'Star War',
-          catagorie: 'Action',
+          catagorie: 'Action, Fantasy',
           director: 'Nolan Liam',
           ratting: 5,
           thumb: 'https://i.pinimg.com/originals/a0/3c/4b/a03c4b4d6c8702586f2aa67aecc744e1.jpg',
           id: 1
         },{
           name: 'False Stem',
-          catagorie: 'Action',
+          catagorie: 'Action ',
           director: 'Nolan Liam',
           ratting: 4,
           thumb: 'https://i.pinimg.com/originals/bb/e3/73/bbe3736ca3522ff81849d90ad89b7031.jpg',
