@@ -2,6 +2,7 @@
   "name": "movie-infoblox",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://menomanabdulla.github.io/movie-infoblox",
   "dependencies": {
     "autobind-decorator": "^2.1.0",
     "babel-eslint": "^8.2.6",
